@@ -184,38 +184,38 @@ class DataController extends Controller
     }
     public function updateProduct(Request $request,$id){
         $user = Product::find($id);
-        // if($user){  
+        if($user){  
 
-        //        $user->product_name =$request->name; 
-        //        $user->category_id =$request->category;
-        //        $user->subcategory_id =$request->subcat;
-        //        $user->sku =$request->sku;
-        //        $user->product_price =$request->price;
-        //        $user->product_dprice =$request->dprice;
-        //        $user->product_discount =$request->discount;
-        //        $user->qty =$request->qty;
-        //        $user->product_description =$request->description;
-        //        $user->product_lquantity =$request->lquantity;
-        //        $user->product_shipping =$request->shipping;
-        //        $user->return =$request->return;
-        //        $user->codstatus =$request->cod;
-        //        $user->status =$request->status;
-        //        $user->shiptime =$request->shiptime;
+               $user->product_name =$request->name; 
+               $user->category_id =$request->category;
+               $user->subcategory_id =$request->subcat;
+               $user->sku =$request->sku;
+               $user->product_price =$request->price;
+               $user->product_dprice =$request->dprice;
+               $user->product_discount =$request->discount;
+               $user->qty =$request->qty;
+               $user->product_description =$request->description;
+               $user->product_lquantity =$request->lquantity;
+               $user->product_shipping =$request->shipping;
+               $user->return =$request->return;
+               $user->codstatus =$request->cod;
+               $user->status =$request->status;
+               $user->shiptime =$request->shiptime;
  
-        //        $user->update();
-        //     return response()->json([
-        //         'status' =>200,
-        //         'member' =>$user,
-        //     ]);
-        // }
-        // else
-        // {
-        //     return response()->json([
-        //         'status' =>400,
+               $user->update();
+            return response()->json([
+                'status' =>200,
+                'member' =>$user,
+            ]);
+        }
+        else
+        {
+            return response()->json([
+                'status' =>400,
                 
-        //     ]);
-        // }
+            ]);
+        }
 
-        return response()->json($request->name);
+        
     }
 }
